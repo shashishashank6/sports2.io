@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin - Bootstrap Admin Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/multiple-select.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+     <link href="http://fonts.googleapis.com/css?family=Comfortaa:400,300,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="">SB Admin</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+            
+                    
+                    
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-calendar"></i>System_setup<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                               <a href="system_setup.html">View</a>
+                                <a href="sports_conf.html">Configure</a>
+                            </li>
+                                                    </ul>
+                    </li>
+                    
+                     <!--<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-shield "></i> Teams<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo1" class="collapse">
+                             <li>
+                                <a href="view_all_teams.html">View All Teams</a>
+                            </li>
+                        </ul>
+                    </li>-->
+                    <!--<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="glyphicon glyphicon-user "></i> Players<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo2" class="collapse">
+                             <li>
+                                <a href="view_all_players.html">View All Players</a>
+                            </li>
+                            <li>
+                                <a href="#">Add New Player</a>
+                            </li>
+                        </ul>
+                    </li>-->
+                    
+                   
+                   
+                </ul>
+            </div>
+            </ul>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        
+                        <form action="" method="post">
+                        
+                            <div class="form-group">
+                        <label for="sports">Sports List</label>
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                          <script src="javascript/multiple-select.js"></script>       
+                        <script type="text/javascript">
+                                
+function CheckColors(val){
+var element=document.getElementById('color');
+var element1=document.getElementById('color1');
+var element2=document.getElementById('color2');
+var element3=document.getElementById('color3');
+var element4=document.getElementById('color4');
+var element5=document.getElementById('color5');
+ if(val=='football'){
+      element3.style.display='none';
+    element1.style.display='none';
+     element2.style.display='none';
+     element4.style.display='none';
+     element5.style.display='none';
+    
+   element.style.display='block';
+   
+ }
+    else if(val=="cricket"){
+         element3.style.display='none';
+         element.style.display='none';
+        element2.style.display='none';
+        element4.style.display='none';
+        element5.style.display='none';
+      element1.style.display='block';
+   
+}
+    else if(val=='basketball'){
+         element3.style.display='none';
+         element.style.display='none';
+      element1.style.display='none';
+   element4.style.display='none';
+        element5.style.display='none';
+        element2.style.display='block';
+    }
+    else  if(val=="Field-Hockey"){
+        element.style.display='none';
+      element1.style.display='none';
+   element4.style.display='none';
+        element5.style.display='none';
+        element2.style.display='none';
+        element3.style.display='block';
+    }
+    else if(val=="baseball"){
+        element.style.display='none';
+      element1.style.display='none';
+   element5.style.display='none';
+        element2.style.display='none';
+        element3.style.display='none';
+        element4.style.display="block";
+        
+    }
+    else if(val==="Volleyball"){
+        
+         element.style.display='none';
+      element1.style.display='none';
+   
+        element2.style.display='none';
+        element3.style.display='none';
+        element4.style.display="none";
+        document.getElementById('color5').classList.add('form-control1');
+         element5.style.display="block";
+       
+    }
+ else  
+   element.style.display='none';
+}
+        $('#color').multipleSelect();
+        $('#color1').multipleSelect();
+      $('#color2').multipleSelect();
+    $('#color3').multipleSelect();
+     $('#color4').multipleSelect();
+    $('#color5').multipleSelect();
+    $('.form-control2').multipleSelect();
+    
+</script> 
+                         <select name="games" id="sports" class="form-control" onchange='CheckColors(this.value);'>
+                          <option value="football">Football</option>
+                          <option value="cricket">Cricket</option>
+                          <option value="baseball">Baseball</option>
+                          <option value="basketball">Basketball</option>
+                             <option value="Field-Hockey">Field-Hockey</option>
+                             <option value="Volleyball">Volleyball</option>
+                         </select>
+                           
+  
+                            </div>
+                            
+<div id="color">
+     <label>Pick Positions</label>
+   <select name="positions" id="" class="form-control1" style="display:none;">
+                          <option value="football">GoalKeeper</option>
+                          <option value="cricket">Centre-Back</option>
+                          <option value="baseball">Left-Back</option>
+                          <option value="basketball">Midfielder</option>
+                          <option value="baseball">Wing-Back</option>
+                          <option value="basketball">Forward</option>
+                         <option value="baseball">Centre-Forward</option>
+                        
+                         </select> 
+                            </div>
+      
+                            
+                            <div id="color1" style="display:none;">
+     <label>Pick Positions</label>
+   <select name="positions" id="" class="form-control1" style="display:none;">
+                          
+                          <option value="cricket">Wicketkeeper</option>
+                          <option value="baseball">Batsman</option>
+                          <option value="basketball">Bowler</option>
+                          <option value="baseball">Allrounder</option>
+                          <option value="basketball">Fielder</option>
+                         
+                        
+                         </select> 
+
+      
+                            </div>
+                            
+                            <div id="color2" style="display:none;" >
+     <label>Pick Positions</label>
+   <select name="positions" id="" class="form-control1" style="display:none;">
+                          
+                          <option value="cricket">Centre</option>
+                          <option value="baseball">Point Guard</option>
+                          <option value="basketball">Shooting Guard</option>
+                          <option value="baseball">Small Forward</option>
+                          <option value="basketball">Power Forward</option>
+                         
+                        
+                         </select> 
+
+      
+                            </div>
+                            
+                            <div id="color3" style="display:none;" >
+     <label>Pick Positions</label>
+   <select name="positions" id="" class="form-control1" style="display:none;">
+                          
+                          <option value="cricket">GoalKeeper</option>
+                          <option value="baseball">Defender</option>
+                          <option value="basketball">Midfielder</option>
+                          <option value="baseball">Forward</option>
+                        
+                         
+                        
+                         </select> 
+
+      
+                            </div>
+                            
+                            <div id="color4" style="display:none;">
+     <label>Pick Positions</label>
+   <select name="positions" id="" class="form-control1" style="display:none;">
+                          
+                          <option value="cricket">Pitcher</option>
+                          <option value="baseball">Catcher</option>
+                          <option value="basketball">Infield</option>
+                          <option value="baseball">OutField</option>
+                        
+                         
+                        
+                         </select> 
+
+      
+                            </div>
+                            
+                            <div id="color5" style="display:none;">
+     <label>Pick Positions</label>
+   <select name="positions" id="" class="form-control1" style="display:none;">
+                          
+                          <option value="cricket">Outside Hitter</option>
+                          <option value="baseball">RightSide Hitter</option>
+                          <option value="basketball">Opposite Hitter</option>
+                          <option value="baseball">Setter</option>
+                          <option value="baseball">Middle Blocker</option>
+                          <option value="baseball">Libero</option>
+                        <option value="baseball">Defensive specialist</option>
+                         
+                        
+                         </select> 
+
+      
+                            </div>
+                            
+                             <div class="form-group">
+                                 <br>
+                        <label>Levels</label>
+                    
+                            <select name="level" class="form-control1" multiple="multiple">
+                          <option value="practice">Practice</option>
+                          <option value="friendly">Friendly</option>
+                          <option value="intra-school">Intra-School</option>
+                          <option value="inter-school">Inter-School</option>
+                            <option value="local">Local</option>
+                             <option value="local">District</option>
+                             <option value="state">State</option>
+                             <option value="national">National</option>
+                             <option value="international">International</option>
+                         </select>
+                            </div>     
+                       
+                            <div class="form-froup">
+                            <label for="skill">Skills</label>
+                         <select name="skills" id="skill" class="form-control1" multiple="multiple">
+                          <option value="balance">Balance</option>
+                          <option value="fitness">Fitness</option>
+                          <option value="flexibity">Flexibility</option>
+                          <option value="hip-flex">Hip Flex</option>
+                            <option value="shoulder-flex">Shoulder-Flex</option>
+                             <option value="running">Running</option>
+                             <option value="jumping">Jumping</option>
+                             <option value="hopping">Hopping</option>
+                             <option value="skipping">Skipping</option>
+                             <option value="dodging">Dodging</option>
+                             <option value="dribbling">Dribbling</option>
+                             <option value="side-sliding">Side Sliding</option>
+                             <option value="catching">Catching</option>
+                         </select>
+                            </div>
+                            
+
+
+
+
+
+<!--                         <select name="level" id="levels" class="form-control">
+                          <option value="practice">Practice</option>
+                          <option value="friendly">Friendly</option>
+                          <option value="intra-school">Intra-School</option>
+                          <option value="inter-school">Inter-School</option>
+                            <option value="local">Local</option>
+                             <option value="state">State</option>
+                             <option value="national">National</option>
+                             <option value="international">International</option>
+                         </select>
+                            </div>
+                             <div class="form-froup">
+                            <label for="skill">Skills</label>
+                         <select name="skills" id="skill" class="form-control">
+                          <option value="balance">Balance</option>
+                          <option value="fitness">Fitness</option>
+                          <option value="flexibity">Flexibility</option>
+                          <option value="hip-flex">Hip Flex</option>
+                            <option value="shoulder-flex">Shoulder-Flex</option>
+                             <option value="running">Running</option>
+                             <option value="jumping">Jumping</option>
+                             <option value="hopping">Hopping</option>
+                             <option value="skipping">Skipping</option>
+                             <option value="dodging">Dodging</option>
+                             <option value="dribbling">Dribbling</option>
+                             <option value="side-sliding">Side Sliding</option>
+                             <option value="catching">Catching</option>
+                         </select>
+                            </div>
+                            <div class="form-froup">
+                            <label for="position">Positions</label>
+                         <select name="positions" id="position" class="form-control">
+                          <option value="goal-keeper">GoalKeeper</option>
+                          <option value="centre-back">Centre Back</option>
+                          <option value="left-back">Left Back</option>
+                          <option value="midfielders">Midfielders</option>
+                            <option value="wing-back">Wingback</option>
+                             <option value="forward">Forward</option>
+                             <option value="centre-forward">Centre-Forward</option>
+                             
+                      </select>-->
+                                <br>
+                        
+                
+                            <input type="submit" name="add" value="Add" class="btn btn-primary">
+                        </form>
+                        
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    
+
+    <!-- Bootstrap Core JavaScript -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="javascript/bootstrap.min.js"></script>
+    <script src="javascript/multiple-select.js"></script>
+    <script>
+        $('.form-control1').multipleSelect();
+    </script>
+
+</body>
+
+</html>
